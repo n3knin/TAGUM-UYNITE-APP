@@ -4,23 +4,29 @@ import { Tabs } from "expo-router";
 import { Image, ImageBackground, Text } from "react-native";
 
 const Highlight = ({ label, icon, focused }: any) => {
-  if (focused) {
-    return (
-      <ImageBackground
-        source={images.highlight}
-        className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full"
-      >
-        <Image source={icon} tintColor="#151312" className="size-5" />
-        <Text className="font-semibold ml-1 color-black">{label}</Text>
-      </ImageBackground>
-    );
-  } else {
-    return (
-      <ImageBackground className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full">
-        <Image source={icon} tintColor="#ffff" className="size-5" />
-      </ImageBackground>
-    );
-  }
+  // if (focused) {
+  return (
+    <ImageBackground
+      source={focused ? images.highlight : undefined}
+      className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full"
+    >
+      <Image
+        source={icon}
+        tintColor={focused ? "#151312" : "#ffff"}
+        className="size-5"
+      />
+      <Text className="font-semibold ml-1 color-black">
+        {focused ? label : undefined}
+      </Text>
+    </ImageBackground>
+  );
+  // } else {
+  //   return (
+  //     <ImageBackground className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full">
+  //       <Image source={icon} tintColor="#ffff" className="size-5" />
+  //     </ImageBackground>
+  //   );
+  // }
 };
 
 const Layout = () => {
