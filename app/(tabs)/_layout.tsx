@@ -16,12 +16,8 @@ const Highlight = ({ label, icon, focused }: any) => {
     );
   } else {
     return (
-      <ImageBackground
-        // source={images.highlight}
-        className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full"
-      >
+      <ImageBackground className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full">
         <Image source={icon} tintColor="#ffff" className="size-5" />
-        {/* <Text className="font-semibold ml-1 color-black">{label}</Text> */}
       </ImageBackground>
     );
   }
