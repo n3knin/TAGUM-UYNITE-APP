@@ -8,7 +8,7 @@ const Highlight = ({ label, icon, focused }: any) => {
   return (
     <ImageBackground
       source={focused ? images.highlight : undefined}
-      className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-14 mt-4 items-center justify-center rounded-full"
+      className="flex-row overflow-hidden w-full flex-1 min-w-[112px] min-h-16 mt-4 items-center justify-center rounded-full"
     >
       <Image
         source={icon}
@@ -38,15 +38,16 @@ const Layout = () => {
         tabBarStyle: {
           backgroundColor: "#1e1e1e",
           borderTopWidth: 0,
-          borderRadius: 14,
+          borderRadius: 20,
           position: "absolute",
-          // bottom: 10,
+          marginBottom: 13,
+          height: 50,
+          marginHorizontal: 20,
+          overflow: "hidden",
         },
         tabBarItemStyle: {
           width: "100%",
           height: "100%",
-          alignItems: "center",
-          justifyContent: "center",
         },
       }}
     >
